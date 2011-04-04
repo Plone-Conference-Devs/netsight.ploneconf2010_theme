@@ -1,0 +1,42 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+  <body>
+
+    <metal:main fill-slot="main">
+      
+      <tal:block replace="structure provider:plone.abovecontenttitle" />
+
+      <h1 class="documentFirstHeading" tal:content="context/Title" />
+
+      <tal:block replace="structure provider:plone.belowcontenttitle" />
+      
+      <div class="newsImageContainer"
+             tal:condition="context/getImage|nothing">
+	
+        <img tal:replace="structure python: context.tag(scale='mini', css_class='newsImage')" src="" alt="" />
+	
+        <p class="discreet" tal:condition="context/imageCaption|nothing">
+          <metal:field use-macro="python:context.widget('imageCaption', mode='view')">
+            Image Caption
+          </metal:field>
+        </p>
+      </div>
+
+      <p tal:define="toLocalizedTime nocall: context/@@plone/toLocalizedTime;" 
+	 class="date" tal:content="python:toLocalizedTime(context.Date(), long_format=0)" />
+      
+      <metal:field use-macro="python:context.widget('text', mode='view')">
+        Body text
+      </metal:field>
+    </metal:main>
+
+    <tal:block replace="structure provider:plone.belowcontentbody" />
+
+
+  </body>
+</html>

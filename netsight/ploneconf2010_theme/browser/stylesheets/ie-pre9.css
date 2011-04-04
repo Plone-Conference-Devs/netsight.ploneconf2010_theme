@@ -1,0 +1,9 @@
+
+#content div.newsImageContainer p.discreet  {
+     filter:alpha(opacity=80);
+}
+
+#portal-globalnav li a .tabDescription{
+    display: block;
+    font-size: 0.75em;
+}

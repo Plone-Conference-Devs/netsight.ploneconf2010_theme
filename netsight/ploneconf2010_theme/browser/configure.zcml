@@ -1,0 +1,191 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:browser="http://namespaces.zope.org/browser"
+   i18n_domain="netsight.ploneconf2010_theme"
+   xmlns:plone="http://namespaces.plone.org/plone">
+  
+  <include package="plone.app.portlets"  />
+
+
+  <!-- 'Plone Conf 2010 Theme' Zope 3 browser layer -->
+  <interface
+      interface=".interfaces.IThemeSpecific"
+      type="zope.publisher.interfaces.browser.IBrowserSkinType"
+      name="Plone Conf 2010 Theme"
+      />
+
+  <browser:page
+     for="Products.PloneConfContentTypes.content.interfaces.IHomepage"
+     name="homepage_view"
+     class=".views.HomepageView"
+     template="templates/homepage_view.pt"
+     permission="zope2.View"
+     />
+
+  <browser:page
+     for="Products.PloneConfContentTypes.content.interfaces.IPloneConfDocument"
+     name="ploneconfdocument_view"
+     template="templates/ploneconfdocument_view.pt"
+     permission="zope2.View"
+     />
+
+  <browser:page
+     for="Products.PloneConfContentTypes.content.interfaces.IPloneConfNewsItemFolder"
+     name="ploneconfnewsitemfolder_view"
+     template="templates/ploneconfnewsitemfolder_view.pt"
+     class=".views.PloneConfNewsItemFolderView"
+     permission="zope2.View"
+     />
+
+  <browser:page
+     for="Products.PloneConfContentTypes.content.interfaces.IPloneConfNewsItem"
+     name="ploneconfnewsitem_view"
+     template="templates/ploneconfnewsitem_view.pt"
+     permission="zope2.View"
+     />
+
+  <!-- Viewlets registration -->
+  <!-- login viewlet -->
+  <browser:viewlet
+     name="plone.personal_bar"
+     manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+     class=".viewlets.PersonalBar"
+     layer=".interfaces.IThemeSpecific"
+     permission="zope2.View"
+     />
+
+  <!-- Global Sections viewlet override -->
+  <browser:viewlet
+     name="plone.global_sections"
+     manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+     class=".viewlets.GlobalSections"
+     layer=".interfaces.IThemeSpecific"
+     permission="zope2.View"
+     />
+
+  <!-- Logo viewlet override -->
+  <browser:viewlet
+     name="plone.logo"
+     manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+     class=".viewlets.Logo"
+     layer=".interfaces.IThemeSpecific"
+     permission="zope2.View"
+     />
+
+  <!-- Site Title viewlet -->
+  <browser:viewlet
+     name="ploneconf2010_theme.site_title"
+     manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+     class=".viewlets.SiteTitle"
+     layer=".interfaces.IThemeSpecific"
+     permission="zope.Public"
+     />
+
+  <!-- sponsor and ticket viewlet -->
+  <browser:viewlet
+     name="ploneconf2010_theme.sponsor_tickets"
+     manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+     class=".viewlets.SponsorTickets"
+     layer=".interfaces.IThemeSpecific"
+     permission="zope.Public"
+     />
+  
+  <!-- section header viewlet -->
+  <browser:viewlet
+     name="ploneconf2010_theme.section_title"
+     manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+     class=".viewlets.SectionTitle"
+     layer=".interfaces.IThemeSpecific"
+     permission="zope.Public"
+     /> 
+
+  <!-- top of content viewlet -->
+  <browser:viewlet
+     name="ploneconf2010_theme.border_above_content"
+     manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+     template="templates/borderabovecontent_viewlet.pt"
+     class=".viewlets.BorderAboveContent"
+     layer=".interfaces.IThemeSpecific"
+     permission="zope.Public"
+     /> 
+
+
+  <!-- border below content -->
+  <browser:viewlet
+     name="ploneconf2010_theme.border_below_content"
+     manager="plone.app.layout.viewlets.interfaces.IBelowContent"
+     template="templates/borderbelowcontent_viewlet.pt"
+     class=".viewlets.BorderBelowContent"
+     layer=".interfaces.IThemeSpecific"
+     permission="zope.Public"
+     /> 
+
+  <!-- below columns viewlet manager -->
+  <browser:viewletManager
+     name="ploneconf2010_theme.belowcolumns"
+     provides=".interfaces.IBelowColumns"
+     permission="zope2.View"
+     class="plone.app.viewletmanager.manager.BaseOrderedViewletManager"
+     />
+  
+  <!-- sponsors viewlet -->
+  <browser:viewlet
+     name="ploneconf2010_theme.sponsors"
+     manager=".interfaces.IBelowColumns"
+     template="templates/sponsors_viewlet.pt"
+     class=".viewlets.Sponsors"
+     layer=".interfaces.IThemeSpecific"
+     permission="zope.Public"
+     /> 
+  
+  <!-- Footer template override -->
+  <browser:viewlet
+     name="plone.footer"
+     manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+     for="*"
+     class=".viewlets.Footer"
+     layer=".interfaces.IThemeSpecific"
+     permission="zope.Public"
+     />
+
+  <!-- portlets -->
+  <!-- navigation portlet template override -->
+  <plone:portletRenderer
+     portlet="plone.app.portlets.portlets.navigation.INavigationPortlet"
+     class=".portlets.NavigationRenderer"
+     layer=".interfaces.IThemeSpecific"
+     />
+
+  <!-- hand and platinum sponsor portlet -->
+  <plone:portlet
+     name="ploneconf2010_theme.Handy"
+     interface=".portlets.IHandyPortlet"
+     assignment=".portlets.HandyAssignment"
+     renderer=".portlets.HandyRenderer"
+     addview=".portlets.HandyAddForm"
+     />
+
+  <!-- Zope 3 browser resources -->
+
+  <!-- Resource directory for images -->
+  <browser:resourceDirectory
+      name="netsight.ploneconf2010_theme.images"
+      directory="images"
+      layer=".interfaces.IThemeSpecific"
+      />
+
+  <!-- Resource directory for stylesheets -->
+  <browser:resourceDirectory
+      name="netsight.ploneconf2010_theme.stylesheets"
+      directory="stylesheets"
+      layer=".interfaces.IThemeSpecific"
+      />
+
+  <!-- Resource directory for images -->
+  <browser:resourceDirectory
+      name="netsight.ploneconf2010_theme.javascript"
+      directory="js"
+      layer=".interfaces.IThemeSpecific"
+      />
+
+</configure>

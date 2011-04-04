@@ -1,0 +1,45 @@
+<div id="conference-sponsors">
+  <ul tal:define="cats view/getSponsorsByCategory|nothing"
+      class="visualNoMarker visualNoMargin">
+    <tal:cats tal:repeat="cat cats">
+      <li tal:define="sponsors cat/sponsors;
+		      is_last repeat/cat/end;
+		      last_class python:is_last and ' last' or ''" 
+	  tal:attributes="id python:'sponsor-%s' % (cat['name']);
+			  class last_class" >
+	<div class="visualPadding">
+	  <h4 class="visualTextOverlay">
+	    <span></span><span tal:replace="python:'%s Sponsors:' % cat['name'].title()"/>
+	  </h4>
+	  <ul tal:condition="sponsors"
+	      class="visualNoMarker">
+	    <tal:spons tal:repeat="spn sponsors">
+	      <li>
+		<p tal:define="show_image python:(spn['getSponsorshipLevel'] != 'supporting') and spn['hasImage']">
+		  <a class="more" tal:omit-tag="not: spn/getWebsite|nothing"
+		     tal:attributes="href spn/getWebsite|nothing;
+				     title spn/Title">
+		    <img tal:condition="show_image"
+			 tal:attributes="src string:${spn/getURL}/image_default;
+					 alt spn/Title" />
+		    <span tal:condition="not: show_image"
+			  tal:replace="spn/Title" />
+		  </a>
+		</p>
+	      </li>
+	    </tal:spons>
+	  </ul>
+
+	</div>
+      </li>
+    </tal:cats>
+  </ul>
+  <p class="discreet beASponsorLink">
+    <a href="/sponsor" title="Become a sponsor" class="more">
+      <img src="/++resource++netsight.ploneconf2010_theme.images/be_a_sponsor.png" alt="- be a sponsor"/>
+    </a>
+  </p>
+  <div class="visualClear"><!-- ie --></div>
+</div>
+
+<div class="visualClear"><!-- ie --></div>

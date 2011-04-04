@@ -1,0 +1,22 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="netsight.ploneconf2010_theme">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="Plone Conf 2010 Theme"
+      directory="profiles/default"
+      description='Extension profile for the "Plone Conf 2010 Theme" Plone theme.'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:importStep
+      name="netsight.ploneconf2010_theme.various"
+      title="Plone Conf 2010 Theme: miscellaneous import steps"
+      description="Various import steps that are not handled by GS import/export handlers."
+      handler="netsight.ploneconf2010_theme.setuphandlers.setupVarious">
+    <depends name="skins"/>
+  </genericsetup:importStep>
+
+</configure>

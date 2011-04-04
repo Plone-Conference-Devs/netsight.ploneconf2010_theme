@@ -1,0 +1,31 @@
+<tal:sections tal:define="portal_tabs view/portal_tabs;
+			  portal context/@@plone_portal_state/portal;"
+     tal:condition="portal_tabs"
+     i18n:domain="plone">
+    <h5 class="hiddenStructure" i18n:translate="heading_sections">Sections</h5>
+
+    <ul id="portal-globalnav"
+        tal:define="selected_tab python:view.selected_portal_tab"
+        ><tal:tabs tal:repeat="tab portal_tabs"
+        ><li tal:define="tid tab/id"
+             tal:attributes="id string:portaltab-${tid};
+                            class python:selected_tab==tid and 'selected' or 'plain'"
+            ><a href=""
+               tal:attributes="href tab/url;
+                               title tab/description|nothing;"
+		><span 
+		    tal:content="tab/name"></span
+					      ><span class="tabDescription" 
+						     tal:content="structure python:tab['description'] or '&nbsp;'">      
+    </span></a></li></tal:tabs></ul>
+    <div id="programme-link" class="plain"
+	 tal:define="prgrm view/getProgrammeBrain">
+      <a href="/the-event/programme"
+	 tal:attributes="href prgrm/getURL|nothing;
+			 title prgrm/Title|nothing"
+	tal:omit-tag="python:not prgrm">
+      <img src="/++resource++netsight.ploneconf2010_theme.images/calendar.gif" 
+	   alt="Monday 25th - Sunday 31st October 2010" />
+      </a>
+    </div>
+</tal:sections>

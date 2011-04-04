@@ -1,0 +1,39 @@
+/** things that lose layout **/
+#portal-header,
+#site-title-wrapper,
+#sponsor-tickets-wrapper,
+#viewlet-above-content,
+#main-become-sponsor-link,
+#main-buy-tickets-link-wrapper,
+#section-title-wrapper,
+#content,
+#homepage-left,
+#homepage-reasons,
+.portletPlatinumSponsor,
+.platinumLogoWrapper,
+#homepage-news-wrapper,
+#homepage-news,
+#homepage-news-wrapper .border,
+#homepage-news-wrapper .borderBottom span,
+#homepage-sponsors,
+.portletNavigationTree,
+.portletNavigationTree li,
+#conference-sponsors ul,
+.visualTextOverlay,
+.visualClear{
+    zoom: 1;
+    position: relative;
+}
+
+#section-title{
+    margin-top: 15px;
+}
+
+#content div.newsImageContainer p.discreet  {
+    background-color: #666;
+     filter:alpha(opacity=80);
+}
+
+#conference-sponsors .beASponsorLink img{
+    margin-top: 1em;
+}

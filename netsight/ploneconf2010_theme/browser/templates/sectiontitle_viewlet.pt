@@ -1,0 +1,14 @@
+<div id="section-title-wrapper" 
+     tal:define="section view/getSection" 
+     tal:condition="python: (not view.atHome()) and section">
+  <span id="section-title"
+	tal:attributes="class string:section-${section/getId}">
+    <a class="visualTextOverlay"
+       tal:attributes="href section/absolute_url;
+		       title section/Title">
+      <span></span>
+      <span tal:replace="section/Title" />
+    </a>
+  </span>
+  <div class="visualClear"><!-- ie --></div>
+</div>

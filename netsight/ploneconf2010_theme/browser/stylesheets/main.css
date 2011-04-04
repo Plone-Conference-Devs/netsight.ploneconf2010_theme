@@ -1,0 +1,1943 @@
+/* Stylesheet for the 'Plone Conf 2010 Theme' Plone theme */
+
+body{
+    text-align: center;
+    color: #3a3e41;
+    background-color: #154f8f;
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg.gif');
+    background-repeat: no-repeat;
+    background-position: 50% top;
+    font-family: Georgia, Times, serif;
+}
+
+#visual-portal-wrapper{
+    text-align: left;
+    margin:auto;
+    width: 960px;
+}
+
+/**** miscellaneous ****/
+
+.highlight{
+    color: #e96e24;
+}
+
+ul.formTabs,
+h1, h2, h3, h4, h5, h6{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a,
+a *{
+    cursor: pointer
+}
+
+
+a:link,
+a:visited,
+#content a:link, 
+dl.portlet a:link,
+#content a:visited,
+dl.portlet a:visited  {
+    border-bottom: none;
+}
+
+#portal-top a:active,
+#section-title a:active,
+.portletNavigationTree a:active,
+#conference-sponsors a:active,
+.platinumLogoWrapper a:active,
+#content a:active,
+#portal-footer a:active{
+  position: relative;
+  top: 1px;
+}
+
+a#homepage-book-now:active{
+    top: 0;
+}
+
+/** Text overlay settings **/
+
+.visualTextOverlay{
+    position: relative;
+    overflow: hidden;
+    display: block;
+}
+
+.visualTextOverlay span{ 
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+}
+
+
+/** new corner style implementation **/
+
+.topleft,
+.topright,
+.bottomleft,
+.bottomright{
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-repeat: no-repeat;
+}
+
+.topleft{
+    top: 0;
+    left: 0;
+}
+
+.topright{
+    top: 0;
+    right: 0;
+}
+
+.bottomleft{
+    bottom: 0;
+    left: 0;
+}
+
+.bottomright{
+    bottom: 0;
+    right: 0;
+}
+
+.crnr1,
+.crnr2,
+.crnr3{
+    position: relative;
+}
+
+.crnr1 .topleft,
+.crnr1 .topright,
+.crnr1 .bottomleft,
+.crnr1 .bottomright{
+    height: 23px;
+    width: 23px;
+}
+.crnr1 .topleft{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/crnr1-tl.png');
+    background-position: -1px -1px;
+}
+.crnr1 .topright{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/crnr1-tr.png');
+    background-position: 0px -1px;
+}
+.crnr1 .bottomleft{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/crnr1-bl.png');
+    background-position: -1px 0px;
+}
+.crnr1 .bottomright{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/crnr1-br.png');
+    background-position: 0px 0px;
+}
+
+.crnr2 .topleft,
+.crnr2 .topright,
+.crnr2 .bottomleft,
+.crnr2 .bottomright{
+    height: 18px;
+    width: 18px;
+}
+.crnr2 .topleft{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/crnr2-tl.png');
+    background-position: -1px -1px;
+}
+.crnr2 .topright{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/crnr2-tr.png');
+    background-position: 0px -1px;
+}
+.crnr2 .bottomleft{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/crnr2-bl.png');
+    background-position: -1px 0px;
+}
+.crnr2 .bottomright{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/crnr2-br.png');
+    background-position: 0px 0px;
+}
+
+.crnr3 .topleft,
+.crnr3 .topright,
+.crnr3 .bottomleft,
+.crnr3 .bottomright{
+    height: 18px;
+    width: 18px;
+}
+.crnr3 .topleft{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_platinumlogo-topleft.png');
+    background-position: -1px -1px;
+}
+.crnr3 .topright{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_platinumlogo-topright.png');
+    background-position: 0px -1px;
+}
+.crnr3 .bottomleft{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_platinumlogo-bottomleft.png');
+    background-position: -1px 0px;
+}
+.crnr3 .bottomright{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_platinumlogo-bottomright.png');
+    background-position: 0px 0px;
+}
+
+/**** Portal Top & Portal Header ****/
+
+#portal-top{
+    background-color: #fff;
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_top.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% top;
+}
+
+#portal-header{
+    background-color: transparent;
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_header.png');
+    background-repeat: no-repeat;
+    background-position: left 103px;
+}
+
+
+#portal-personaltools{
+    position: absolute;
+    right: auto;
+    left: 0;
+}
+
+/** Global Nav **/
+
+#portal-globalnav{
+    float: left;
+    margin: 0;
+    margin-bottom: 5px;
+    padding-left: 25px;
+    background-color: #3180b9;
+    background-image: none;
+    font-weight: bold;
+    font-style: italic;
+    height: 98px;
+    font-size: 0.9em;
+}
+
+#portal-globalnav li{
+    text-align: left;
+    vertical-align: top;
+    float: left;
+}
+
+#portal-globalnav li a,
+#portal-globalnav li a:visited{
+    min-width: 0;
+    border: none;
+    padding: 10px;
+    background: none;
+    color: #fff;
+    margin-top: 15px;
+}
+
+#portal-globalnav .selected a, 
+#portal-globalnav a:focus, 
+#portal-globalnav a:hover,
+#portal-globalnav .selected a:focus, 
+#portal-globalnav .selected a:hover{
+    background: none;
+    color: #000 !important;
+}
+
+#portal-globalnav li a span{
+    display: block;
+    float: left;
+}
+
+#portal-globalnav li a .tabDescription{
+    display: block;
+    font-size: 0.8em;
+    font-weight: normal;
+    color: #ddd;
+    float: left;
+    clear: both;
+    max-width: 110px;
+    max-width: 140px;
+}
+
+#programme-link{
+    float: right;
+    margin-top: 10px;
+}
+
+/** Logo **/
+
+#portal-logo{
+    margin: 0;
+    float: left;
+}
+
+/** site title and info **/
+
+#site-title-wrapper{
+    float: right;
+    font-size: 1.1em;
+    font-style: italic;
+    line-height: 1em;
+    font-weight: bold;
+    color: #3180b9;
+    margin-top: 35px;
+    text-align: right;
+    width: 474px;
+}
+
+#site-title{
+    float: right;
+    clear: both;
+    letter-spacing: -1px;
+    display: block;
+    font-size: 2em !important;
+    line-height: 1em;
+    color: #3180b9;
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#site-title a,
+#site-title a:visited{
+    color: #3180b9;
+}
+
+#site-title a:hover{
+    color: #3a3e41;
+}
+
+#conf-info{
+    clear: both;
+    text-align: right;
+    font-size: 0.85em;
+    float: right;
+    color: #3a3e41;
+}
+
+#conf-info-hosted{
+    font-size: 0.7em;
+}
+
+#plone-logo{
+    margin-top: 15px;
+    float: right;
+    clear: both;
+}
+
+/** Sponsor and Ticket links **/
+
+#sponsor-tickets-wrapper{
+    padding-top: 43px;
+    padding-left: 30px;
+    clear: both;
+}
+
+a#main-become-sponsor-link{
+    color: #fff;
+    height: 72px;
+    width: 384px;
+    display: block;
+    float: left;
+    background-repeat: no-repeat;
+    background-color: #1691db;
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_sponsor_flag.png');
+    background-position: -1px -83px;
+    paddin-left: 1px;
+    padding-top: 1px;
+    margin-top: 7px;
+}
+
+a#main-become-sponsor-link:hover{
+    background-position: -1px -1px;
+}
+
+#main-buy-tickets-link-wrapper{
+    float: right;
+    width: 380px;
+    height: 137px;
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_main_tickets_link.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+#main-buy-tickets-link{
+    padding-left: 10px;
+    padding-top: 13px;
+    display: block;
+}
+
+#main-buy-tickets-link #buy-info{
+    padding-left: 6px;
+    display: block;
+    margin: 3px 0;
+    color: #3a3e41;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+#main-buy-tickets-link #buy-cost{
+    display: block;
+    padding-left: 10px;
+    font-size: 0.8em;
+    line-height: 3em;
+    vertical-align: baseline;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #25aae1;
+    font-weight: bold;
+}
+
+#main-buy-tickets-link #cost-price{
+    font-size: 3em;
+    color: #e96e24;
+    letter-spacing: -2px;
+}
+
+#edit-bar{
+    margin-bottom: 0;
+    margin-right: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#portal-column-content.width-full #edit-bar{
+    margin-left: 20px;    
+}
+
+#content-views a, #content li.formTab a  {
+    padding: 0 5px;
+}
+dl.actionMenu a, dl.actionMenu div {
+    padding: 0;
+}
+
+/**** Portal Columns ****/
+
+#portal-columns,
+#portal-below-columns{
+    background-color: transparent;
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_columns.png');
+    background-repeat: repeat-y;
+    background-position: 50% top;
+}
+
+#portal-column-one, #portal-column-content, #portal-column-two{
+    background-color: #fff;
+}
+
+#viewlet-above-content,
+#content,
+#viewlet-below-content{
+    margin-right: 20px;
+}
+
+.width-full #viewlet-above-content,
+.width-full #content,
+.width-full #viewlet-below-content{
+    margin-left: 20px;
+}
+
+#portal-column-one{
+    padding-top: 82px;
+}
+
+/** Portlets **/
+
+#portal-column-one .portletWrapper{
+    margin-left: 20px;
+}
+
+/* dummy handy portlet */
+
+.portletHandy{
+    height: 105px;    
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_navportlet.png');
+    background-repeat: no-repeat;
+}
+
+/* nav portlet */
+dl.portletNavigationTree{
+    background-color: #fff;
+}
+
+.navTree{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.navTreeLevel1{
+    font-size: 0.7em;
+}
+
+dl.portlet ul.navTreeLevel0 .navTree{
+    margin-left: 10px;
+    margin-bottom: 2px;
+}
+
+.navTreeLevel0{
+    padding-bottom: 5px;
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/brd_hrz_dash_blue_big.png');
+    background-repeat: repeat-x;
+    background-position: left bottom;
+}
+
+dl.portlet ul.navTreeLevel0 .navTreeItem  {
+    line-height: 1.1em;
+    margin: 0;
+    padding: 0;
+    border: none;
+    padding-top: 5px;
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/brd_hrz_dash_blue_big.png');
+    background-repeat: repeat-x;
+    background-position: left top;
+}
+
+dl.portlet ul.navTreeLevel1 .navTreeItem  {
+    padding-top: 0px;
+    background: none;
+}
+
+dl.portlet ul.navTreeLevel0 .navTreeItem a{
+    padding: 10px 0 7px 10px;
+    border: none;
+}
+dl.portlet ul.navTreeLevel1 .navTreeItem a{
+    padding: 2px 0 2px 10px;
+}
+
+dl.portlet ul.navTree .navTreeCurrentItem {
+    margin: 0;
+    background: none;
+    border: none;
+}
+
+dl.portlet ul.navTree .navTreeItem a,
+dl.portlet ul.navTree .navTreeItem a:visited{
+    color: #3180B9 !important;
+    border: none;
+}
+
+dl.portlet ul.navTree .navTreeItem a.navTreeItemInPath,
+dl.portlet ul.navTree .navTreeItem a.navTreeItemInPath:visited,
+dl.portlet ul.navTree .navTreeItem a.navTreeCurrentItem,
+dl.portlet ul.navTree .navTreeItem a.navTreeCurrentItem:visited,
+dl.portlet ul.navTree .navTreeItem a:hover{
+    color: #3a3e41 !important;
+    border: none;
+}
+
+
+
+/** section title **/
+
+#section-title-wrapper{
+    background-color: transparent;
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_section_title.png');
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    text-align: right;
+    margin-top: -10px;
+    padding-right: 15px;
+    padding-top: 20px;
+}
+
+#section-title-wrapper #section-title{
+    line-height: 72px;
+    font-size: 2.3em;
+    font-weight: bold;
+    display: block;
+    padding-top: 1px;
+}
+
+/** content border **/
+.contentBorder{
+    height: 28px;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.contentBorder span{
+    display: block;
+    height: 28px;
+    width: 28px;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0;
+}
+
+
+/** border above content **/
+
+#border-above-content{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_content_topleft.png');
+    background-position: -1px -1px;
+
+}
+
+#border-above-content span{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_content_topright.png');
+    background-position: 0px -1px;
+    bottom: 0;
+}
+
+/** Content **/
+
+#content{
+    margin-left: 0px;
+    padding: 1px 122px 1px 20px;
+    border-left: 8px solid #d1e4f0;
+    border-right: 8px solid #d1e4f0;
+    background-color: #f2f7fb;
+    background-repeat: no-repeat;
+    background-position: left top;
+    font-size: 96%;
+}
+
+.documentFirstHeading{
+    font-size: 2em;
+    letter-spacing: -1px;
+    color: #3180B9;
+    margin-bottom: 1em
+}
+
+#content .documentDescription{
+    color: #3A3E41;
+    font-size: 1em;
+    font-weight: normal;
+    font-family:Georgia,Times,serif;
+    line-height:1.5em;
+}
+
+#content h2, 
+#content h3, 
+#content h4,
+#content-core h2, 
+#content-core h3, 
+#content-core h4{
+    letter-spacing: -1px;
+    color: #3180B9;
+    margin-top: 1.5em;
+    margin-bottom:0.5em;
+}
+
+#content h2, 
+#content h4,
+#content-core h2, 
+#content-core h4{
+    color: #3A3E41;
+}
+
+#content h2,
+#content-core h2{
+    font-size: 1.8em;
+}
+
+#content h3,
+#content-core h3{
+    font-size: 1.5em;
+}
+
+#content table.plain th,
+#content table.plain td{
+    border: 1px solid #ddd;
+    padding: 6px;
+}
+
+#content a:link,
+#content a:visited{
+    color: #3180B9;
+}
+
+
+#portal-below-columns a:focus,
+#portal-below-columns a:hover,
+#content a:focus,
+#content a:hover{
+    color: #222 !important;
+}
+
+/** talk view styles **/
+
+.pb-ajax > *  {
+    background-color: #F2F7FB;
+    padding: 20px;
+}
+
+#talk-details{
+    width: 220px;
+    float: right;
+    margin-right: -102px;
+    margin-top:0.7em;
+}
+
+.pb-ajax #talk-details{
+    margin-right: 0px;
+    margin-top: 0;
+}
+
+#talk-details .visualPadding{
+    padding: 0 0 0 20px;
+}
+
+#talk-details h2{
+    margin-top: 0;
+}
+
+#content-core .speakerName{
+    margin-top: 0;
+}
+p.talkCompany{
+    margin-top: -1.5em;
+}
+
+.pb-ajax p.talkCompany{
+    margin-top: -1em;
+    font-size: 85%;
+    color: #666;
+}
+
+/** border below content **/
+
+#border-below-content{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_content_bottomleft.png');
+    background-position: -1px -1px;
+}
+
+#border-below-content span{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_content_bottomright.png');
+    background-position: 0 -1px;
+    top: 0;
+}
+
+
+/** homepage **/
+
+
+body.template-homepage_view{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_home.gif');
+}
+
+.template-homepage_view #portal-top{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_top_homepage.jpg');
+}
+
+.template-homepage_view #portal-header{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_header_homepage.png');
+}
+
+.template-homepage_view #site-title-wrapper{
+    margin-top: 68px;
+}
+
+.template-homepage_view #viewlet-above-content,
+.template-homepage_view #content,
+.template-homepage_view #viewlet-below-content{
+    background: none #fff;
+}
+
+.template-homepage_view #content{
+    border: none;
+    padding: 0px;
+    margin-top: -40px;
+    background-color: transparent;
+}
+
+.template-homepage_view .documentEditable #content{
+    margin-top: 0;
+}
+
+#homepage-left{
+    width: 320px;
+    float: left;
+}
+
+#homepage-reasons-wrapper{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_beer.png');
+    background-repeat: no-repeat;
+    background-position: 236px 10px;
+    margin-right: 20px;
+}
+
+#homepage-reasons-wrapper h2{
+    margin: 0 0 0 20px;
+    line-height: 65px;
+}
+
+#homepage-reasons{
+    background-color: #3180b9;
+}
+
+#content #homepage-reasons ul{
+    list-style-image:url('/++resource++netsight.ploneconf2010_theme.images/bullet_reasons.png');
+    color: #fff;
+    margin-left: 40px;
+    margin-right: 20px;
+    margin-bottom: 0.5em !important;
+}
+
+#content #homepage-reasons li{
+    line-height: 1.25em !important;
+    margin-bottom: 0.75em;
+}
+
+#homepage-reasons .border,
+#homepage-news-wrapper .border{
+    height: 28px;
+    background-repeat: no-repeat;
+    background-position: -1px -1px;
+}
+
+
+
+#homepage-reasons .border span,
+#homepage-news-wrapper .border span{
+    float: right;
+    height: 28px;
+    width: 28px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: 0 -1px;
+}
+
+#homepage-reasons .borderTop{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_reasons-topleft.png');
+}
+
+#homepage-reasons .borderTop span{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_reasons-topright.png');
+}
+
+#homepage-reasons .borderBottom{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_reasons-bottomleft.png');
+    background-position: -1px 0px;
+}
+
+#homepage-reasons .borderBottom span{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_reasons-bottomright.png');
+    background-position: 0px 0px;
+}
+
+#homepage-book-now{
+    display: block;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+
+#speakers-container {
+    background-image: url("/++resource++netsight.ploneconf2010_theme.images/bg_speakers.gif"); 
+    background-repeat: no-repeat;
+    background-position: left top;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+#talk-submission-invite{
+    width: 309px;
+    float: left;
+    height: 357px;
+}
+
+#talk-submission-invite .visualPadding{
+    padding: 11px 40px 0 15px;
+}
+
+#vote-link{
+    background-color: #6fa6ce;
+    zoom: 1;
+    position: relative;
+}
+
+#vote-link .visualPadding{
+    padding: 15px 10px 10px 10px;
+}
+
+#vote-link h3{
+    margin: 0px 0 8px 0;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#vote-link .innerText{
+    background-color: #3180b9;
+    zoom: 1;
+    position: relative;
+}
+
+#vote-link .innerText .visualPadding{
+    padding-bottom: 15px;
+}
+
+#vote-link .innerText p{
+    margin: 0px;
+}
+
+#vote-link a:link,
+#vote-link a:visited{
+    color: #fff;
+}
+
+#keynote-speakers{
+    float: left;
+    height: 360px;
+    width: 588px;
+    position: relative;
+}
+
+#keynote-speakers h2{
+    margin: 0;
+    margin-top: 13px;
+}
+
+#keynote-speakers .knSpeaker{
+    height: 138px;
+    position: absolute;
+}
+
+.knSpeaker img{
+    float: left;
+}
+
+#guest-keynote{
+    top: 55px;
+    left: 0;
+    width: 273px;
+}
+
+#guest-keynote img{
+    margin-right: 8px;
+}
+
+#keynote-one{
+    top: 15px;
+    right: 0;
+    width: 271px;
+}
+
+#keynote-one img{
+    margin-right: 7px;
+}
+
+#keynote-two{
+    top: 137px;
+    right: 0;
+    width: 267px;
+}
+
+#keynote-two img{
+    float: right;
+}
+
+#speakers{
+    margin-left: 2px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    background-image:url("/++resource++netsight.ploneconf2010_theme.images/brd_hrz_dash_blue_big.png");
+    background-position:left bottom;
+    background-repeat:repeat-x;
+}
+
+#speakers img  {
+    margin: 0px 27px 15px 0px;
+    border: 0px
+}
+
+#speakers img.last{
+    margin-right: 0px;
+}
+
+
+
+.portletPlatinumSponsor{
+    margin-top: 20px;
+    position: relative;
+    padding: 10px;
+    background-color: #3180b9;
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_reasons-topleft.png');
+    background-repeat: no-repeat;
+    background-position: -1px -1px;
+}
+
+#homepage-left .portletPlatinumSponsor{
+    margin-right: 20px;
+}
+
+.portletPlatinumSponsor h3{
+    margin: 0 !important;
+    margin-left: 10px !important;
+}
+
+#homepage-left .portletPlatinumSponsor{    
+    margin-left: 10px !important;
+}
+
+.portletPlatinumSponsor p{
+    margin-bottom: 0;
+}
+
+.portletPlatinumSponsor .topright,
+.portletPlatinumSponsor .bottomleft,
+.portletPlatinumSponsor .bottomright{
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    background-repeat: no-repeat;
+}
+
+.portletPlatinumSponsor .topright{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_reasons-topright.png');
+    top: 0;
+    right: 0;
+    background-position: 0px -1px;
+}
+
+.portletPlatinumSponsor .bottomleft{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_reasons-bottomleft.png');
+    bottom: 0;
+    left: 0;
+    background-position: -1px 0px;
+}
+
+.portletPlatinumSponsor .bottomright{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_reasons-bottomright.png');
+    bottom: 0;
+    right: 0;
+    background-position: 0px 0px;
+}
+
+.platinumLogoWrapper{
+    position: relative;
+    padding: 10px;
+    background-color: #fff;
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_platinumlogo-topleft.png');
+    background-repeat: no-repeat;
+    text-align: center;
+    margin-top: 10px;
+    background-position: -1px -1px;
+
+}
+
+.platinumLogoWrapper .topright,
+.platinumLogoWrapper .bottomleft,
+.platinumLogoWrapper .bottomright{
+    position: absolute;
+    height: 19px;
+    width: 19px;
+    background-repeat: no-repeat;
+}
+
+.platinumLogoWrapper .topright{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_platinumlogo-topright.png');
+    background-position: 0px -1px;
+}
+.platinumLogoWrapper .bottomleft{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_platinumlogo-bottomleft.png');
+    background-position: -1px 0px;
+}
+.platinumLogoWrapper .bottomright{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_platinumlogo-bottomright.png');
+    background-position: 0px 0px;
+}
+
+
+#homepage-news-wrapper{
+    width: 578px;
+    float: left;
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_seagul.png');
+    background-repeat: no-repeat;
+    background-position: 136px top;
+}
+
+#homepage-news-wrapper h2{
+    margin: 0 0 0 28px;
+    line-height: 65px;
+}
+
+#homepage-news-wrapper .borderTop{
+    background-image:url("/++resource++netsight.ploneconf2010_theme.images/bg_content_topleft.png");
+}
+
+#homepage-news-wrapper .borderTop span{
+    background-image: url("/++resource++netsight.ploneconf2010_theme.images/bg_content_topright.png");
+}
+
+#homepage-news-wrapper .borderBottom{
+    background-image: url("/++resource++netsight.ploneconf2010_theme.images/bg_content_bottomleft.png");
+}
+
+#homepage-news-wrapper .borderBottom span{
+    background-image: url("/++resource++netsight.ploneconf2010_theme.images/bg_content_bottomright.png");
+}
+
+#homepage-news{
+    background-color:#F2F7FB;
+    border-left:8px solid #D1E4F0;
+    border-right:8px solid #D1E4F0;
+    padding: 1px 10px 1px 10px;
+}
+
+#content .newsListing{
+    list-style-type: none;
+    margin: 0;
+}
+
+#content .newsListing h3,
+#content .newsListing li{
+    margin: 0px;
+}
+
+
+.newsListing li{
+    padding: 20px 10px;
+    background-image: url("/++resource++netsight.ploneconf2010_theme.images/brd_hrz_dash_blue_big.png");
+    background-repeat: repeat-x;
+    background-position: left bottom;
+}
+
+.newsListing li h3{
+    line-height: 1em;
+    margin-bottom: 0.75em;
+}
+
+.newsListing li.first{
+    padding-top: 0px;
+}
+
+.newsListing li.last{
+    background-image: none;
+}
+
+#content .newsListing p.newsDate,
+#content .newsListing li p.moreLink{
+    margin-bottom: 0;
+}
+
+#homepage-news .allNewsLink{
+    padding-left: 10px;
+}
+
+#conference-sponsors{
+    margin: 20px 0;
+}
+
+#conference-sponsors li{
+    width: 229px;
+    float: left;
+    margin: 0;
+}
+
+#conference-sponsors li li{
+    width: auto;
+}
+
+#conference-sponsors h4{
+    margin-bottom: 0;
+}
+
+#conference-sponsors li .visualPadding{
+    margin-right: 19px;
+}
+
+#conference-sponsors li.last{
+    width: 210px;
+}
+
+#conference-sponsors li.last .visualPadding{
+    margin: 0;
+}
+
+#conference-sponsors li p{
+    margin: 1em 0 1em 40px;
+}
+
+#conference-sponsors .discreet{
+    font-size: 0.85em;
+}
+
+#conference-sponsors .beASponsorLink{
+    text-align: right;
+}
+
+#conference-sponsors .beASponsorLink img{
+    margin-top: 5em;
+}
+
+#viewlet-below-columns{
+    margin: 0 20px;
+    background-color: #fff;
+}
+
+
+/**** Portal Footer ****/
+
+#portal-footer {
+    padding: 0px;
+    margin: 0px;
+    background-color: transparent;
+    color: #fff;
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/bg_above_footer.png');
+    background-repeat: no-repeat;
+    background-position: 50% -2px;
+}
+
+#portal-footer .visualPadding{
+    padding: 70px 20px 20px 15px;
+}
+
+#portal-footer p{
+    margin-bottom: 1em;
+}
+
+#portal-footer #footer-contact{
+    float: right;
+    width: 182px;
+}
+
+#portal-footer a,
+#portal-footer a:visited{
+    color: #fff
+}
+
+#portal-footer a:hover{
+    text-decoration: underline;
+}
+
+#footer-sitemap{
+    float: left;
+    margin-bottom: 40px;
+}
+
+#footer-sitemap li{
+    float: left;
+    width: 179px;
+}
+
+#footer-sitemap a{
+    display:block;
+    padding: 3px 5px;
+}
+
+#footer-sitemap a:hover{
+    color: #154F8F;
+    background-color: #fff;
+    text-decoration: none;
+}
+
+#footer-sitemap.level0{
+    font-style: italic;
+    font-weight: bold;
+}
+
+#footer-sitemap .level1{
+    font-style: normal;
+    font-weight: normal;
+}
+
+#footer-info{
+    margin-left: 5px;
+}
+
+
+
+/****
+
+
+     Text Replacement
+
+
+****/
+
+#site-title-join-us.visualTextOverlay{
+    float: left;
+    width: 98px;
+    height: 19px;
+}#site-title-join-us.visualTextOverlay span{  
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/txt_joinusfor.png');
+}
+
+#site-title .visualTextOverlay{
+    float: left;
+    width: 474px;
+    height: 28px;
+}#site-title .visualTextOverlay span{  
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/txt_site_title.png');
+    background-position: left top;
+}#site-title a.visualTextOverlay:hover span{
+    background-position: left -38px;
+}
+
+
+#conf-info .visualTextOverlay{float: right;}
+#conf-info .visualTextOverlay span{right: 0;}
+
+#conf-info-date.visualTextOverlay{
+    width: 286px;
+    height: 24px;
+}#conf-info-date.visualTextOverlay span{  
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/txt_conf_date.png');
+}
+
+#conf-info-venue.visualTextOverlay{
+    width: 281px;
+    height: 23px;
+}#conf-info-venue.visualTextOverlay span{    
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/txt_conf_venue.png');
+}
+
+#conf-info-hosted.visualTextOverlay{
+    width: 215px;
+    height: 23px;
+}#conf-info-hosted.visualTextOverlay span{    
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/txt_conf_hosted.png');
+    background-position: left top;
+}#conf-info-hosted.visualTextOverlay a:hover span{
+    background-position: left -33px;
+}
+
+#main-become-sponsor-link .visualTextOverlay{
+    height: 23px;
+    margin-left: 125px;
+    margin-top: 27px;
+}#main-become-sponsor-link .visualTextOverlay span{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/txt_becomeasponsor_lrg.png');
+    background-position: -1px -36px;
+}#main-become-sponsor-link:hover .visualTextOverlay span{
+    background-position: -1px -1px;
+}
+
+#featuring-fifty .visualTextOverlay{
+    height: 141px;
+    width: 252px;
+}#featuring-fifty .visualTextOverlay span{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/txt_featuringoverfifty.png');
+}
+
+#invitation-open.visualTextOverlay{
+    height: 38px;
+    width: 252px;
+}#invitation-open.visualTextOverlay span{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/txt_invitationfortalks.png');
+}
+
+#talk-submission-link .visualTextOverlay{
+    height: 68px;
+    width: 243px
+}#talk-submission-link .visualTextOverlay span{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/txt_applyhere.png');
+}
+
+#keynotes-by .visualTextOverlay{
+     height: 33px;
+    width: 253px;
+}#keynotes-by .visualTextOverlay span{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/txt_keynotesby.png');
+}
+
+#guest-keynote .visualTextOverlay{
+    height: 73px;
+    width: 125px;
+    float: left;
+}#guest-keynote .visualTextOverlay span{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/txt_richardnoble.png');
+}
+
+#keynote-one .visualTextOverlay{
+    height: 75px;
+    width: 124px;
+    float: left;
+    margin-top: 8px;
+}#keynote-one .visualTextOverlay span{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/txt_alexlimi.png');
+}
+
+#keynote-two .visualTextOverlay{
+    height: 74px;
+    width: 122px;
+    float: left;
+    text-align: right;
+    margin-top: 35px;
+}#keynote-two .visualTextOverlay span{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/txt_alanrunyan.png');
+}
+
+#vote-link h3 .visualTextOverlay{
+    height: 16px;
+    width: 234px;
+}#vote-link h3 .visualTextOverlay span{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/txt_votenow.png');
+}
+
+#vote-link .innerText .visualTextOverlay{
+    height: 64px;
+    width: 211px;
+}#vote-link .innerText .visualTextOverlay span{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/txt_voteforthetalks.png');
+}
+
+#homepage-reasons-wrapper .visualTextOverlay{
+     height: 65px;
+    width: 208px;
+}#homepage-reasons-wrapper .visualTextOverlay span{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/txt_reasonstoattend.png');
+}
+
+.portletPlatinumSponsor .visualTextOverlay{
+    height: 30px;
+    width: 160px;
+}.portletPlatinumSponsor .visualTextOverlay span{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/txt_platinumsponsor.png');
+}
+
+#homepage-news-wrapper .visualTextOverlay{
+    height: 65px;
+    width: 104px;
+}#homepage-news-wrapper .visualTextOverlay span{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/txt_news.png');
+}
+
+/* sponsors */
+#conference-sponsors .visualTextOverlay{
+    height: 24px;
+    width: 210px;
+}#conference-sponsors .visualTextOverlay span{
+    background-position: left 50%;
+}
+#sponsor-gold .visualTextOverlay span{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/txt_goldsponsors.png');
+}
+#sponsor-silver .visualTextOverlay span{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/txt_silversponsors.png');
+}
+#sponsor-bronze .visualTextOverlay span{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/txt_bronzesponsors.png');
+}
+#sponsor-supporting .visualTextOverlay span{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/txt_supportingsponsors.png');
+}
+
+#main-buy-tickets-link .visualTextOverlay{
+    width: 139px;
+    height: 22px;
+}#main-buy-tickets-link .visualTextOverlay span{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/txt_buytickets_lrg.png');
+}
+
+/** section title overlays **/
+
+#section-title .visualTextOverlay{
+    height: 72px;
+    width: 335px;
+    float: right;
+}#section-title .visualTextOverlay span{
+    background-position: -10px 0px;
+    right: 0;
+}#section-title .visualTextOverlay:hover span{
+    background-position: -10px -85px;
+}
+
+/* overlay - the event */
+#section-title.section-the-event .visualTextOverlay span{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/txt_section_event.png');
+}
+
+/* overlay - the venue & bristol */
+#section-title.section-the-venue-bristol .visualTextOverlay span{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/txt_section_venuebristol.png');
+}
+
+/* overlay - the party */
+#section-title.section-the-party .visualTextOverlay span{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/txt_section_party.png');
+}
+
+/* overlay - register */
+#section-title.section-register .visualTextOverlay span{
+    background-image: url("/++resource++netsight.ploneconf2010_theme.images/txt_section_register.png");
+}
+
+/* overlay - news */
+#section-title.section-news .visualTextOverlay span{
+    background-image: url("/++resource++netsight.ploneconf2010_theme.images/txt_section_news.png");
+}
+
+/* overlay - sponsor */
+#section-title.section-sponsor .visualTextOverlay span{
+    background-image: url("/++resource++netsight.ploneconf2010_theme.images/txt_section_sponsor.png");
+}
+
+/* overlay - the conference */
+#section-title.section-the-conference .visualTextOverlay span{
+    background-image: url('/++resource++netsight.ploneconf2010_theme.images/txt_section_theconference.png');
+}
+
+/* overlay - logistics */
+#section-title.section-logistics .visualTextOverlay span{
+    background-image: url("/++resource++netsight.ploneconf2010_theme.images/txt_section_logistics.png");
+
+}
+
+/* overlay - programme */
+#section-title.section-programme .visualTextOverlay span{
+    background-image: url("/++resource++netsight.ploneconf2010_theme.images/txt_section_programme.png");
+
+}
+
+/* overlay - wiki */
+#section-title.section-the-wiki .visualTextOverlay span{
+    background-image: url("/++resource++netsight.ploneconf2010_theme.images/txt_section_thewiki.png");
+
+}
+
+
+
+
+
+
+
+/**** more miscellaneous ****/
+dl.portalMessage{
+    margin: 10px 20px 10px 0;
+    border-color: #3180B9;
+    -moz-border-radius-topleft:0.5em;
+    -moz-border-radius-topright:0.5em;
+    -moz-border-radius-bottomleft:0.5em;
+    -moz-border-radius-bottomright:0.5em;
+}
+
+.width-full dl.portalMessage{
+    margin-left: 20px;
+}
+
+dl.portalMessage dt{
+    background-color: #3180B9;
+    -moz-border-radius-topleft:0.3em;
+    -moz-border-radius-bottomleft:0.3em;
+}
+
+dl.error{
+    border-color: red;
+}dl.error dt{
+    background-color: red;
+}
+
+.overlay-ajax{
+    text-align: left;
+}
+
+.more{
+    font-style: italic;
+    font-weight: bold;
+}
+
+.visualNoMargin{
+    margin: 0 !important;
+}
+
+.date{
+    color: #666;
+}
+
+#content div.newsImageContainer{
+    position: relative;
+    overflow: hidden;
+}
+#content div.newsImageContainer p.discreet  {
+    width: auto;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    padding: 3px 0;
+}
+#content div.newsImageContainer p.discreet  span{
+    padding: 0 5px;
+}
+
+#content img {
+    max-width: 520px;
+}
+
+img.image-left, img.image-right, .captioned img {
+    border: none;
+}
+
+img.image-left{
+    margin-left: 0;
+}
+
+img.image-right{
+    margin-right: 0;
+}
+
+#content.dialog-wrapper{
+    background-color: none repeat scroll 0 0 #fff;
+    border: none;
+    text-align: left;
+    font-size: 80%;
+    padding: 1em 1em 0 1em !important;
+    margin: 0 !important;
+}
+
+/** TinyMCE **/
+
+body.mceContentBody{
+    text-align: left;
+}
+
+#content.mceContentBody{
+    border: none;
+    padding: 5px;
+    margin: 0;
+}
+
+#content .talk h3 {
+    margin-bottom: 0px;
+    line-height: 1.2em;
+}
+
+#content .talk .synopsis {
+    float: left; 
+    width: 420px;
+}
+
+#content .talk .vote {
+    float: left;
+    width: 80px;
+    text-align: center;
+    font-size: 1.2em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#content .talk .detail {
+    background: #FFC;
+    font-size: 0.9em;
+    font-style: italic;
+    margin-left: 80px;
+    padding: 1em;
+    width: 420px;
+    display: none;
+}
+
+#content .talk .bio {
+    background: #FFC;
+    font-size: 0.9em;
+    font-style: italic;
+    padding: 1em;
+    width: 500px;
+    display: none;
+}
+
+
+#content .talk .control {
+    margin-left: 80px;
+    width: 420px;
+}
+
+.filter {
+    background: #ffff00;
+    padding: 0.5em;
+    margin: 1em;
+    border: 1px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#content .talk .byline p {
+    margin-bottom: 0px;
+}
+
+#content .talk .byline {
+    margin-bottom: 0.5em;
+}
+
+.template-schedule #content{
+    padding-right: 20px;
+}
+
+.schedule .talk {
+    padding: 0.5em;
+}
+
+.schedule td .byline {
+     line-height: 1.2em;   
+}
+
+.schedule th {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+}
+
+.schedule td {
+    vertical-align: top;
+    padding: 0.5em 0.5em;
+    width: 140px;
+}
+
+#content a.link-overlay {
+    border: 0px !important;
+}
+
+.businessday td {
+    vertical-align: top;
+    padding: 0.5em 0.5em;
+    width: 280px;
+}
+
+
+.schedule td.sprint {
+    vertical-align: top;
+    padding: 0.5em 0.5em;
+    width: 560px;
+}
+
+.sprint {
+    text-align: center;
+}
+
+.schedule .talk h3, .schedule .sprint h3, .schedule .training h3 {
+   font-size: 1em !important;
+   margin-top: 0px !important;
+}
+
+.schedule .talk .name, .schedule .training .name {
+   font-weight: bold;
+}
+
+.schedule {
+   width: 600px;
+}
+
+.schedule tr.heading {
+   background-color: #D1E4F0;
+}
+
+.schedule tr th {
+   padding: 0.2em;
+   text-align: center;
+}
+
+.schedule tr.odd {
+   background-color: white;
+}
+
+.schedule tr.break {
+   text-align: center;
+   background-color: white;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.schedule tr.break td {
+   vertical-align: middle;
+}
+
+.schedule td.time {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+    font-style: italic;
+    vertical-align: top;
+    padding: 1em;
+    text-align: left;
+    width: 40px;
+}
+
+.businessday td.time {
+    width: 120px;
+}
+
+.businessday tr.break {
+   text-align: left;
+}
+
+.schedule .break {
+   padding: 0.5em;
+}
+
+.talk .keywords {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.7em;
+    margin-left: 0px !important;
+}
+
+.talk .keywords li {
+    list-style-type: none;
+}
+
+.talk .keywords li a {
+    color: white !important;
+    padding: 0.2em;    
+}
+#content .talk .keywords li a:hover,
+#content .talk .keywords li a:active{
+    color: #fff !important;
+    text-decoration: underline;
+}
+
+#content .talk .keywords li a:focus {
+    color: #fff !important;
+}
+
+.talk .keywords li a.selected{
+    text-decoration: underline;
+}
+
+.keyword{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9em;
+    color: #fff;
+    padding: 0 2px;
+    white-space: nowrap;
+}
+
+.keywords .keyword{
+    font-size: 1em;
+}
+
+.keyword-tutorial {
+    background-color: #ff6600 !important;
+}
+
+.keyword-newtoplone {
+    background-color: #cc0000 !important;
+}
+
+.keyword-developers {
+    background-color: #00cc66 !important;
+}
+
+.keyword-integrators {
+    background-color: #3399ff !important;
+}
+
+.keyword-designers {
+    background-color: #336666 !important;
+}
+
+.keyword-enterprise {
+    background-color: #aaaaaa !important;
+}
+
+.keyword-education {
+    background-color: #cccc00 !important;
+}
+
+.keyword-smallbusiness {
+    background-color: #ff33ff !important;
+}
+
+.keyword-healthcare {
+    background-color: #660033 !important;
+}
+
+.keyword-government {
+    background-color: #006600 !important;
+}
+
+.keyword-casestudy {
+    background-color: #000099 !important;
+}
+
+p.css-vertical-text {
+		    border:0px solid red;
+		    writing-mode:tb-rl;
+		    -webkit-transform:rotate(90deg);
+		    -moz-transform:rotate(90deg);
+		    -o-transform: rotate(90deg);
+		    white-space:nowrap;
+		    display:block;
+		    bottom:0;
+		    width:20px;
+		    height:20px;
+		    font-family: ‘Trebuchet MS’, Helvetica, sans-serif;
+		    font-size:24px;
+		    font-weight:normal;
+                    color: white;
+		    margin-top:-150px;
+/*		    text-shadow: 0px 0px 1px #333; */
+}
+
+td.coppart {
+  width: 30px;
+  background-color: #cc0000;
+  padding-left: 10px;
+  padding-right: 0px;
+}
+
+td.cspart {
+  width: 30px;
+  background-color: #3366ff;
+  padding-left: 10px;
+  padding-right: 0px;
+}
+
+#banners-wrapper{
+    background-color: #fff;
+    zoom: 1;
+    position: relative;
+}
+
+#banners { 
+    margin: 0px !important;
+    height: 158px;
+    overflow: hidden;
+    list-style-type: none;
+}
+
+
+#banners li { 
+    background-color: transparent !important;
+    margin: 0px;
+    line-height: 1.2em;
+}
+
+
+#banners a { 
+    padding-left: 20px; 
+    padding-right: 20px;
+    height: 158px;
+    display: block;
+}
+
+#banners strong{
+    display: block;
+    padding: 15px 0px;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+#banners br{
+    display: none;
+}
+
+.cancelled {
+    text-decoration: line-through !important;
+}
+
+div.listingBar{
+    text-align: center
+}
+
+div.listingBar a{
+    border: 0px;
+}
+
+.details {
+    float: right;
+    font-family: Arial,Helvetica,sans-serif;
+    line-height: 1.2em;
+    background: #3180b9;
+    color: white;
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
+.details a {
+    color: white !important;
+}
+

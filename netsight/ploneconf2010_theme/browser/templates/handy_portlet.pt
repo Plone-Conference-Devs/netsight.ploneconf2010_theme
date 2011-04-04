@@ -1,0 +1,34 @@
+<div class='portlet portletHandy'><!-- ie --></div>
+
+<div class="portletPlatinumSponsor"
+     tal:define="plat view/getPlatinumSponsor|nothing"
+     tal:condition="plat">
+  <span class="topright"></span>
+  
+  <h3 class="visualTextOverlay">
+    <span></span>Platinum Sponsor:
+  </h3>
+  <div class="platinumLogoWrapper">
+    <span class="topright"></span>
+    <tal:platinum tal:condition="plat">
+      <a tal:omit-tag="not: plat/getWebsite|nothing"
+	 tal:attributes="href plat/getWebsite|nothing;
+			 title plat/Title">
+	<img tal:condition="plat/hasImage" 
+	     tal:attributes="src string:${plat/getURL}/image_platinumPortlet;
+			     alt plat/Title" />
+      </a>
+    </tal:platinum>
+    
+    <p tal:condition="not:plat">
+      Currently there is no platinum sponsor.<br />
+      <a class="more" href="/sponsor" title="Become a sponsor">
+	&mdash; become the platinum sponsor
+      </a>
+    </p>
+    <span class="bottomleft"></span>
+    <span class="bottomright"></span>
+  </div>
+  <span class="bottomleft"></span>
+  <span class="bottomright"></span>
+</div>

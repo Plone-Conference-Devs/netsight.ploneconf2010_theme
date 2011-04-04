@@ -1,0 +1,47 @@
+<div id="portal-footer" class="row" i18n:domain="plone">
+  <div class="cell width-full position-0">
+    <div class="visualPadding">
+      <h5 class="hiddenStructure">Short Sitemap</h5>
+      <ul id="footer-sitemap" tal:define="tabs view/getTabs"
+	  class="level0"
+	  tal:condition="tabs">
+	<li tal:repeat="tab tabs">
+	  <a tal:attributes="href tab/getURL"
+	     tal:content="tab/Title" />
+	  <ul tal:define="sub_tabs python:view.getTabs(tab)"
+	      tal:condition="sub_tabs"
+	      class="level1">
+	    <li tal:repeat="sub sub_tabs">
+	      <a tal:attributes="href sub/getURL"
+		 tal:content="sub/Title" />
+	    </li>
+	  </ul>
+	</li>
+      </ul>
+
+      <div class="visualClear"><!-- ie --></div>
+      <div id="footer-info">
+	<p id="footer-contact">
+	  Email: 
+	  <a href="mailto:info@ploneconf2010.org" title="email us">
+	    info@ploneconf2010.org
+	  </a>
+	</p>
+	<p id="copyright">
+	  <a href="http://www.netsight.co.uk" title="Netsight Internet Solutions">
+	    &copy;
+	    <span 
+	       tal:omit-tag=""
+	       tal:define="now modules/DateTime/DateTime"
+	       tal:content="now/year" />
+	    Netsight Internet Solutions
+	  </a>
+	</p>
+      </div>
+      
+      <div class="visualClear"><!-- ie --></div>
+    </div>
+  </div>
+</div>
+<div class="visualClear"><!-- ie --></div>
+

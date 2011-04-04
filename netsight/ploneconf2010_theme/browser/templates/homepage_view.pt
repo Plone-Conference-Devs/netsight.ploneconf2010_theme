@@ -1,0 +1,261 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+  <body>
+    
+    <metal:block 
+       fill-slot="top_slot"
+       tal:define="disable_column_one python:request.set('disable_plone.leftcolumn',1);
+                   disable_column_two python:request.set('disable_plone.rightcolumn',1);" />
+
+
+    <metal:main fill-slot="main">
+
+      <div id="speakers-container"> 
+	<div id="talk-submission-invite">
+	  <div class="visualPadding">
+	    <p id="featuring-fifty">
+	      <a href="/the-event/talks">
+		<span class="visualTextOverlay">
+		  <span></span>
+		  Featuring Over 50 international guest speakers&hellip;
+		</span>
+	      </a>
+	    </p>
+	    <div id="banners-wrapper" class="crnr3">
+	      <span class="topleft"></span>
+	      <span class="topright"></span>
+	      <ul id="banners">
+		<li tal:repeat="talk view/getTalks">
+		  <a tal:attributes="href talk/absolute_url">
+		    <strong tal:content="talk/Title">title</strong><br />
+		    <span class="discreet byline">
+		      <span class="name" tal:content="talk/name |nothing" />,
+		      <tal:block tal:condition="talk/company | nothing">
+			<span tal:replace="talk/company | nothing" />,
+		      </tal:block>
+		      <span tal:replace="talk/country | nothing" />
+		    </span>
+		    
+		  </a>
+		</li>
+	      </ul>
+	      <span class="bottomleft"></span>
+	      <span class="bottomright"></span>
+	    </div>
+	    <div id="vote-link" class="crnr1" tal:condition="python:0">
+	      <span class="topleft"></span>
+	      <span class="topright"></span>
+	      <div class="visualPadding">
+		<div class="innerText crnr2">
+		  <span class="topleft"></span>
+		  <span class="topright"></span>
+		  <div class="visualPadding">
+		    <p>
+		      <a href="/the-event/talks"
+			 title="Vote now!">
+			<span class="visualTextOverlay">
+			  <span></span>
+			  Vote for the talks you wish to see at the conference.
+			  Vote for the talks you wish to see at the conference.
+			</span>
+		      </a>
+		    </p>
+		  </div>
+		  <span class="bottomleft"></span>
+		  <span class="bottomright"></span>
+		</div>
+		<span class="bottomleft"></span>
+		<span class="bottomright"></span>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<div id="keynote-speakers">
+	  <h2 id="keynotes-by">
+	    <a href="/the-event/keynotes">
+	      <span class="visualTextOverlay">
+		<span></span>
+		keynotes by&hellip;
+	      </span>
+	    </a>
+	  </h2>
+	  <div id="guest-keynote"
+	       class="knSpeaker">
+	    <a href="/the-event/keynotes">
+	      <img src="/++resource++netsight.ploneconf2010_theme.images/richard_noble.png" width="138" height="138" alt="Richard Noble" />
+	      <span class="visualTextOverlay">
+		<span></span>
+		Richard Noble<br />
+		Guest speaker
+	      </span>
+	    </a>
+	  </div>
+	  <div id="keynote-one"
+	       class="knSpeaker">
+	    <a href="/the-event/keynotes">
+	      <img src="/++resource++netsight.ploneconf2010_theme.images/alex_limi.png" width="138" height="138" alt="Alex Limi" />
+	      <span class="visualTextOverlay">
+		<span></span>
+		Alex Limi<br />
+		Keynote Speaker
+	      </span>
+	    </a>
+	  </div>
+	  <div id="keynote-two"
+	       class="knSpeaker">
+	    <a href="/the-event/keynotes">
+	      <img src="/++resource++netsight.ploneconf2010_theme.images/alan_runyan.png" width="138" height="138" alt="Alan Runyan" />
+	      <span class="visualTextOverlay">
+		<span></span>
+		Alan Runyan<br />
+		Keynote Speaker
+	      </span>
+	    </a>
+	  </div> 
+	</div>
+	<div class="visualClear"><!-- ie --></div>	 
+	<div id="speakers"> 
+	  <a href="/the-event/talks">
+	    <img src="/++resource++netsight.ploneconf2010_theme.images/eric_steele.jpg" width="119" height="148" alt="Eric Steele" /> 
+	    <img src="/++resource++netsight.ploneconf2010_theme.images/geir_baekholt.jpg" width="119" height="148" alt="Geir Bækholt" /> 
+	    <img src="/++resource++netsight.ploneconf2010_theme.images/rob_gietema.jpg" width="119" height="148" alt="Rob Gietema" /> 
+	    <img src="/++resource++netsight.ploneconf2010_theme.images/elizabeth_leddy.jpg" width="119" height="148" alt="Elizabeth Leddy" /> 
+	    <img src="/++resource++netsight.ploneconf2010_theme.images/steve_mcmahon.jpg" width="119" height="148" alt="Steve McMahon" /> 
+	    <img class="last" src="/++resource++netsight.ploneconf2010_theme.images/martin_aspeli.jpg" width="119" height="148" alt="Martin Aspeli" /> 
+	  </a>
+	</div> 
+      </div> 
+
+      <div id="homepage-left">
+
+	<div id="homepage-reasons-wrapper">
+	  <h2 class="visualTextOverlay"><span></span>Reasons to Attend</h2>
+	  <div class="visualClear"><!-- ie --></div>	  
+	  
+	  <div id="homepage-reasons">
+	    
+	    <div class="border borderTop">
+	      <span></span>
+	    </div>
+
+	    <ul tal:define="items context/getReasonsToCome|nothing">
+	      <li tal:repeat="item items"
+		  tal:content="item">
+	      </li>
+	    </ul>
+	    
+	    <div class="border borderBottom">
+	      <span></span>
+	    </div>
+	    
+	  </div>
+	</div>
+	
+	<a id="homepage-book-now"
+	   href="/register"
+	   title="Book now!">
+	  <img alt="Book now!" src="/++resource++netsight.ploneconf2010_theme.images/book_now.png"/>
+	</a>
+	
+	<div class="portletPlatinumSponsor"
+	     tal:define="plat view/getPlatinumSponsor|nothing"
+	     tal:condition="plat">
+	  <span class="topright"></span>
+	  
+	  <h3 class="visualTextOverlay">
+	    <span></span>Platinum Sponsor:
+	  </h3>
+	  <div class="platinumLogoWrapper">
+	    <span class="topright"></span>
+	    <tal:platinum tal:condition="plat">
+	      <a tal:omit-tag="not: plat/getWebsite|nothing"
+		 tal:attributes="href plat/getWebsite|nothing;
+				 title plat/Title">
+		<img tal:condition="plat/hasImage" 
+		     tal:attributes="src string:${plat/getURL}/image_platinum;
+				     alt plat/Title" />
+	      </a>
+	    </tal:platinum>
+	    
+	    <p tal:condition="not:plat">
+	      Currently there is no platinum sponsor.<br />
+	      <a class="more" href="/sponsor" title="Become a sponsor">
+		&mdash; become the platinum sponsor
+	      </a>
+	    </p>
+	    <span class="bottomleft"></span>
+	    <span class="bottomright"></span>
+	  </div>
+	  <span class="bottomleft"></span>
+	  <span class="bottomright"></span>
+	</div>
+
+	<!-- /#homepage-left -->
+      </div>
+
+      <!-- News -->
+      <div id="homepage-news-wrapper">
+	<h2 class="visualTextOverlay"><span></span><a href="/news" title="All news">News</a></h2>
+	<div class="visualClear"><!-- ie --></div>
+	<div class="border borderTop">
+	  <span></span>
+	</div>
+	<div id="homepage-news"
+	     tal:define="news view/getNewsItems|nothing;
+			 toLocalizedTime nocall: context/@@plone/toLocalizedTime;">
+	  <ul class="newsListing" tal:condition="news">
+	    <tal:repeat tal:repeat="item news">
+	      <li tal:define="first repeat/item/start;
+			      last repeat/item/end;
+			      first_class python:first and ' first' or '';
+			      last_class python:last and ' last' or ''"
+		  tal:attributes="class string:${first_class}${last_class}">
+		<h3>
+		  <a tal:content="item/Title"
+		     tal:attributes="href item/getURL;
+				     title item/Title">
+		    Title
+		  </a>
+		</h3>
+		<p class="discreet newsDate" tal:content="python:toLocalizedTime(item['Date'],long_format=0)"/>
+		<p  tal:define="desc item/Description|nothing"
+		    tal:condition="desc"
+		    tal:content="structure python:context.replaceNlWithBr(desc)"/>
+		<p class="moreLink">
+		  <a tal:attributes="href item/getURL;"
+		     title="Read more"
+		     class="more">
+		    &mdash; read more
+		  </a>
+		</p>
+	      </li>
+	    </tal:repeat>
+	  </ul>
+	  <p class="visualNoMargin allNewsLink"
+	     tal:condition="news">
+	    <a href="/news"
+	       class="more"
+	       title="All news">
+	      &mdash; all news
+	    </a>
+	  </p>
+
+	  <p tal:condition="not: news">
+	    Sorry, there is currently no news.
+	  </p>
+	</div>
+	<div class="border borderBottom">
+	  <span></span>
+	</div>
+      </div>
+      <div class="visualClear"><!-- ie --></div>
+      
+    </metal:main>
+
+  </body>
+</html>

@@ -1,0 +1,2 @@
+recursive-include netsight *
+global-exclude *pyc

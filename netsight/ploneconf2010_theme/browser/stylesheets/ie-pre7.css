@@ -1,0 +1,28 @@
+/** things that lose layout **/
+#portal-personaltools {
+    float: left
+}
+
+.portletPlatinumSponsor{
+    margin-right: 10px;
+}
+
+.portletPlatinumSponsor,
+.platinumLogoWrapper{
+    overflow: hidden;
+}
+
+.portletPlatinumSponsor .bottomleft,
+.portletPlatinumSponsor .bottomright{
+    bottom: -1px;
+}
+
+.pb-ajax,
+.pb-ajax > *  {
+    background-color: #F2F7FB;
+    padding: 0px;
+}
+
+.pb-ajax{
+    padding: 20px;
+}

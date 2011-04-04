@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<portlets> 
+  <portlet 
+     addview="ploneconf2010_theme.Handy"
+     title="Handy"
+     description="An empty portlet to keep column open and show a hand"
+     />
+
+  <assignment 
+     name="handy" 
+     category="context" 
+     key="/"
+     manager="plone.leftcolumn" 
+     type="ploneconf2010_theme.Handy" 
+     insert-after="*" />
+
+</portlets>

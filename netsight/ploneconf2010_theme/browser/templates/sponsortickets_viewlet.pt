@@ -1,0 +1,46 @@
+<div id="sponsor-tickets-wrapper">
+  <a id="main-become-sponsor-link"
+     href="/sponsor"
+     title="Sponsor the conference">
+    <span class="visualTextOverlay">
+      <span></span>Become a sponsor
+    </span>
+  </a>
+  <div id="main-buy-tickets-link-wrapper"
+       tal:define="homepage view/getHomepage;
+		   can_early view/isEarlybirdAvailable">
+    <a id="main-buy-tickets-link"
+       href="/register"
+       title="Buy tickets">
+      <span class="visualTextOverlay">
+	<span></span>
+	Buy Tickets
+      </span>
+      <span id="buy-info"
+	    tal:condition="can_early">
+	secure your place now for<br />
+	the earlybird special price of:<br />
+      </span>
+      <span id="buy-info"
+	    tal:condition="not: can_early">
+	secure your place now for<br />
+	the bargain price of:<br />
+      </span>
+      <span id="buy-cost"
+	    tal:condition="homepage">
+	<tal:early tal:condition="can_early">
+	<span id="cost-price">
+	  &pound;<span tal:replace="homepage/getEarlybirdPrice|nothing" /></span>
+	<span class="highlight">+vat</span> 
+	Normally &pound;<span tal:replace="homepage/getTicketPrice|nothing" /> +vat
+	</tal:early>
+	<tal:regular tal:condition="not: can_early">
+	  <span id="cost-price">
+	    &pound;<span tal:replace="homepage/getTicketPrice|nothing" /></span>
+	  <span class="highlight">+vat</span>
+	</tal:regular>
+      </span>
+    </a>
+  </div>
+  <div class="visualClear"><!-- ie --></div>
+</div>

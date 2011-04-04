@@ -1,0 +1,93 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+  <body>
+
+    <metal:main fill-slot="main">
+
+      <tal:block replace="structure provider:plone.abovecontenttitle" />
+
+      <h1 class="documentFirstHeading" tal:content="context/Title" />
+
+      <tal:block replace="structure provider:plone.belowcontenttitle" />
+
+
+      <tal:newsitems tal:define="batch view/getBatchedNewsItems">
+
+
+	<tal:foldercontents 
+	   define="limit_display python:0;
+		   batch view/getBatchedNewsItems;
+		   site_properties context/portal_properties/site_properties;
+		   use_view_action site_properties/typesUseViewActionInListings|python:();
+		   
+		   normalizeString nocall: context/plone_utils/normalizeString;
+		   toLocalizedTime nocall: context/@@plone/toLocalizedTime;
+		   navigation_root_url context/@@plone_portal_state/navigation_root_url;">
+	  <ul class="newsListing" tal:condition="batch">
+            <tal:entry tal:repeat="item batch">
+	      <tal:block 
+		 tal:define="item_url item/getURL|item/absolute_url;
+                             item_id item/getId|item/id;
+                             item_title item/pretty_title_or_id;
+                             item_description item/Description;
+                             item_date item/Date|nothing;">
+                <li tal:define="first repeat/item/start;
+				last repeat/item/end;
+				first_class python:first and ' first' or '';
+				last_class python:last and ' last' or ''"
+		  tal:attributes="class string:${first_class}${last_class}">
+                  <h3>
+		    <a href="#"
+                       tal:attributes="href item_url"
+		       class="url"
+                       tal:content="item_title">
+                      Item Title
+                    </a>
+		  </h3>
+		  <p class="discreet newsDate" tal:content="python:toLocalizedTime(item_date,long_format=0)"/>
+                  <p tal:omit-tag=""
+                     tal:condition="not:item_description">
+		    &nbsp;
+                  </p>
+		  <p tal:condition="item_description"
+		      tal:content="structure python:context.replaceNlWithBr(item_description)"/>
+		  <p class="moreLink">
+		    <a tal:attributes="href item/getURL;"
+		       title="Read more"
+		       class="more">
+		      &mdash; read more
+		    </a>
+		  </p>
+		</li>
+		
+	      </tal:block>
+	    </tal:entry>
+	    
+	    
+	  </ul>
+          <p class="discreet"
+             tal:condition="not: batch"
+             i18n:translate="description_no_items_in_folder">
+            There are currently no items in this folder.
+          </p>
+	  
+	  <div tal:condition="batch" metal:use-macro="context/batch_macros/macros/navigation" />
+	  
+	</tal:foldercontents>
+	
+	<div class="visualClear"><!-- --></div>
+      </tal:newsitems>
+      
+      <tal:block replace="structure provider:plone.belowcontentbody" />
+	
+ 
+
+    </metal:main>
+
+  </body>
+</html>

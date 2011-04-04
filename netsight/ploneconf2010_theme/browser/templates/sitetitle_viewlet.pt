@@ -1,0 +1,36 @@
+<div id="site-title-wrapper"
+     tal:define="portal_state context/@@plone_portal_state;">
+  <span id="site-title-join-us" class="visualTextOverlay"
+	tal:condition="view/atHome">
+    <span></span>Join us for 
+  </span>
+  <div class="visualClear"><!-- ie --></div>
+  <h1 id="site-title" tal:omit-tag="not: view/atHome">
+    <span id="site-title" tal:omit-tag="view/atHome">
+      <a tal:attributes="href portal_state/portal_url"
+	 title="Home" class="visualTextOverlay">
+	<span></span>Plone Conference Bristol 2010
+      </a>
+    </span>
+  </h1>
+  <div id="conf-info">
+  <span id="conf-info-date" class="visualTextOverlay">
+    <span></span>October 25th - October 31st 2010<br />
+  </span>
+  <span id="conf-info-venue" class="visualTextOverlay">
+    <span></span>Thistle Grand Hotel, Bristol, UK<br />
+  </span>
+  <span id="conf-info-hosted" class="visualTextOverlay">
+    <a href="http://www.netsight.co.uk"
+       title="Netsight Internet Solutions">
+      <span></span>Hosted by Netsight Internet Solutions
+    </a>
+  </span>
+  </div>
+  <a id="plone-logo"
+     href="http://plone.org"
+     title="Plone.org">
+    <img src="/++resource++netsight.ploneconf2010_theme.images/plone_logo.png" alt="Plone.org" height="42" width="159"/>
+  </a>
+  <div class="visualClear"><!-- ie --></div>
+</div>

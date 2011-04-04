@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<object name="portal_properties" meta_type="Plone Properties Tool">
+ <object name="site_properties" meta_type="Plone Property Sheet">
+  <property name="localTimeFormat" type="string">%d %b %Y</property>
+  <property name="localLongTimeFormat"
+     type="string">%d %b %Y %I:%M %p</property>
+  <property name="localTimeOnlyFormat" type="string">%I:%M %p</property>
+  <property name="default_language" type="string">en-uk</property>
+ </object>
+</object>

@@ -1,0 +1,5 @@
+<div id="border-below-content" 
+     class="contentBorder" 
+     tal:condition="not: view/atHome">
+  <span class="rightCorner"></span>
+</div>
