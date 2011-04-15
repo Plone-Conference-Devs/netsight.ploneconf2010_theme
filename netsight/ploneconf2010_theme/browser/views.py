@@ -1,6 +1,8 @@
 from Products.Five import BrowserView
-#from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from Products.CMFPlone import Batch
+try:
+    from Products.CMFPlone.PloneBatch import Batch
+except ImportError:
+    from Products.CMFPlone import Batch
 from random import shuffle
 
 class HomepageView(BrowserView):
@@ -20,7 +22,7 @@ class HomepageView(BrowserView):
 
     def getTalks(self):
          brains  = self.context.portal_catalog.searchResults(
-             portal_type = 'netsight.ploneconf2010_talks.talk',
+             portal_type = 'netsight.conferencetalks.talk',
              )
 
          if brains:

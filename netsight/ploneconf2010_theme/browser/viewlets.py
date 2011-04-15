@@ -132,7 +132,7 @@ class Footer(ViewletBase, Utilities):
                 'sort_on': 'getObjPositionInParent'
                 }
         brains  = self.context.portal_catalog.searchResults(query)
-        ignores= ['Homepage', 'netsight.ploneconf2010_talks.talk']
+        ignores= ['Homepage', 'netsight.conferencetalks.talk']
         brains = [x for x in brains if not (x['exclude_from_nav'] or x['portal_type'] in ignores)]
         return brains
         
